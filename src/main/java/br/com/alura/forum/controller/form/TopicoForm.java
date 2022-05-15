@@ -48,4 +48,12 @@ public class TopicoForm {
 	public void setNomeCurso(String nomeCurso) {
 		this.nomeCurso = nomeCurso;
 	}
+
+	public Topico atualizar(Long id, TopicoRepository topicoRepository) {
+		
+		Topico topico = topicoRepository.getById(id);
+		topico.setTitulo(this.getTitulo());
+		topico.setMensagem(this.getMensagem());
+		return topico;
+	}
 }
